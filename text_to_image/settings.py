@@ -22,7 +22,7 @@ HUGGING_FACE_API_KEY = os.getenv('API_KEY')
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://text-to-img-hxbt.onrender.com","text-to-img-hxbt.onrender.com"]
 
 
 # Application definition
