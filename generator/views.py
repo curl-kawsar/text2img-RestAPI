@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import TextPrompt
 from .serializers import TextPromptSerializer
-
+from django.conf import settings
 logger = logging.getLogger(__name__)
 
 class GenerateImageView(APIView):
