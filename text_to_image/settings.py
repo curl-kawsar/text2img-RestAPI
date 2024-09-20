@@ -18,7 +18,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Get the API key from environment variables
-HUGGING_FACE_API_KEY = os.getenv('HUGGING_FACE_API_KEY')
+HUGGING_FACE_API_KEY = os.getenv('API_KEY')
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
 
