@@ -43,7 +43,7 @@ class GenerateImageView(APIView):
                     f.write(response.content)
                 
                 # Assuming you have a way to serve the image files, generate the URL
-                image_url = f"http://yourserver.com/{image_path}"
+                image_url = f"https://text-to-img-hxbt.onrender.com//{image_path}"
                 
                 text_prompt = TextPrompt.objects.create(prompt=prompt, image_url=image_url)
                 serializer = TextPromptSerializer(text_prompt)
