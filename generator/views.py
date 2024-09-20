@@ -18,7 +18,7 @@ class GenerateImageView(APIView):
             
             # Hugging Face API URL for Stable Diffusion 2.1
             API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2-1"
-            headers = {"Authorization": f"Bearer {os.getenv('HUGGING_FACE_API_KEY')}"}
+            headers = {"Authorization": f"Bearer {os.getenv('API_KEY')}"}
             
             # Input text prompt with additional parameters for higher quality
             data = {
