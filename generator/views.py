@@ -34,16 +34,16 @@ class GenerateImageView(APIView):
             response = requests.post(API_URL, headers=headers, json=data)
             
             if response.status_code == 200:
-                # Ensure the generated_images directory exists
-                os.makedirs('generated_images', exist_ok=True)
+                # Ensure the media directory exists
+                os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
                 
                 # Save the response image to a file
-                image_path = f"generated_images/{prompt.replace(' ', '_')}.png"
+                image_path = os.path.join(settings.MEDIA_ROOT, f"{prompt.replace(' ', '_')}.png")
                 with open(image_path, "wb") as f:
                     f.write(response.content)
                 
-                # Assuming you have a way to serve the image files, generate the URL
-                image_url = f"https://text-to-img-hxbt.onrender.com//{image_path}"
+                # Generate the URL for the saved image
+                image_url = f"{settings.MEDIA_URL}{prompt.replace(' ', '_')}.png"
                 
                 text_prompt = TextPrompt.objects.create(prompt=prompt, image_url=image_url)
                 serializer = TextPromptSerializer(text_prompt)
